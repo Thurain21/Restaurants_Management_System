@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Table Management</title>
+</head>
+<body>
+	
+	<form th:action = "@{/updateTableStatus}">
+	<input type="hidden" name="tableId" th:value="${table.tableId}">
+	<input type="hidden" name="tableName" th:value="${table.tableName}"> 
+	<label for="tablestatus">Table Status</label><br><br>
+	<select id="tablestatus" name="tableStatus">
+		<option>Available</option>
+		<option>Occupied</option>
+	</select>
+	<br><br><br>
+	<input type="submit" value="Update">
+	
+	</form>
+	<br>
+	<form th:action = "@{/Order}">
+	<input type="submit" value="View Order">
+	</form>
+	<a th:href="@{/RestaurantOrder}">Main Table List</a>
+
+</body>
+</html>

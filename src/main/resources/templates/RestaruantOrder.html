@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Manage Table</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>Table Name</th>
+			<th>Status</th>
+			<th>Action</th>
+		</tr>
+		<tr th:each="Table : ${tablelist} ">
+			<td th:text="${Table.tableName}"></td>
+			<td th:text="${Table.tableStatus}"></td>
+			<td><a th:href="@{table/{tableId}(tableId = ${Table.tableId})}">View Table</a></td>
+		</tr>
+	
+	</table>
+</body>
+</html>
