@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.pjdc.thurain.Restaurants_Management_System.model.DataForOrder;
+import com.pjdc.thurain.Restaurants_Management_System.model.Item;
 import com.pjdc.thurain.Restaurants_Management_System.model.OrderData;
 import com.pjdc.thurain.Restaurants_Management_System.model.Table;
 import com.pjdc.thurain.Restaurants_Management_System.repository.DataRepository;
@@ -35,5 +37,15 @@ public class ServiceImpl implements Services{
 	public List<OrderData> selectOrder() {
 		return dr.selectOrder();
 	}
+
+	@Override
+	public List<Item> selectItem() {
+		return dr.selectItem();
+	}
+
+	@Override
+	public int insertOrderData(List<DataForOrder> items, int tableId, String orderDate) {
+        return dr.insertOrderData(items, tableId, orderDate);
+    }
 
 }
