@@ -17,6 +17,9 @@
 			<td><a th:href="@{table/{tableId}(tableId = ${Table.tableId})}">View Table</a></td>
 		</tr>
 	
-	</table>
+	</table><br><br>
+	<form th:action = "@{/insertOrder}" method="post">
+		<input type="submit" value="Insert Orders">
+	</form>
 </body>
 </html>
