@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert Orders</title>
+</head>
+<body>
+    <h2>Order Form</h2>
+    <form th:action="@{/insertOrderData}" method="post">
+        <label for="tableId">Select Table:</label>
+        <select name="tableId" required>
+            <option th:each="Table : ${tablelist}" th:value="${Table.tableId}" th:text="${Table.tableName}"></option>
+        </select><br><br>
+
+        <h3>Select Items:</h3>
+        <div th:each="Item, stat : ${itemlist}">
+            <input type="checkbox" name="items[${stat.index}].itemId" th:value="${Item.itemId}">
+            <input type="number" name="items[${stat.index}].quantity" placeholder="Enter quantity" required min="1">
+            <input type="hidden" name="items[${stat.index}].price" th:value="${Item.itemPrice}">
+            <span th:text="${Item.itemName} + ' - $' + ${Item.itemPrice}"></span><br>
+        </div><br>
+
+        <label for="orderDate">Order Date:</label>
+        <input type="date" name="orderDate" required><br><br>
+
+        <input type="submit" value="Order">
+    </form>
+</body>
+</html>
