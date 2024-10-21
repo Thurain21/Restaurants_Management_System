@@ -4,6 +4,7 @@ public class Item {
 	
 	private int itemId;
 	private String itemName;
+	private String itemPrice;
 	public int getItemId() {
 		return itemId;
 	}
@@ -28,7 +29,7 @@ public class Item {
 		this.itemPrice = itemPrice;
 	}
 
-	private String itemPrice;
+	
 	
 	public Item(int itemId,String itemName,String itemPrice) {
 		this.itemId = itemId;
