@@ -1,60 +1,39 @@
 package com.pjdc.thurain.Restaurants_Management_System.model;
 
 public class DataForOrder {
-	
-	private int orderId;
-	private int tableId;
-	private String orderDate;
-	private int quantity;
-	private String price;
-	public int getOrderId() {
-		return orderId;
-	}
+    private int itemId;
+    private int quantity;
+    private String price;
 
-	public void setOrderId(int orderId) {
-		this.orderId = orderId;
-	}
-	
-	
+    public DataForOrder() { }
 
-	public int getTableId() {
-		return tableId;
-	}
+    public DataForOrder(int itemId, int quantity, String price) {
+        this.itemId = itemId;
+        this.quantity = quantity;
+        this.price = price;
+    }
 
-	public void setTableId(int tableId) {
-		this.tableId = tableId;
-	}
+    public int getItemId() {
+        return itemId;
+    }
 
-	public String getOrderDate() {
-		return orderDate;
-	}
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
+    }
 
-	public void setOrderDate(String orderDate) {
-		this.orderDate = orderDate;
-	}
+    public int getQuantity() {
+        return quantity;
+    }
 
-	public String getPrice() {
-		return price;
-	}
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
-	public void setPrice(String price) {
-		this.price = price;
-	}
+    public String getPrice() {
+        return price;
+    }
 
-	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-	
-	public DataForOrder(int orderId,int tableId ,String orderDate, String price , int quantity){
-		this.orderId= orderId;
-		this.tableId = tableId;
-		this.orderDate = orderDate;
-		this.price = price;
-		this.quantity = quantity;
-	}
-
+    public void setPrice(String price) {
+        this.price = price;
+    }
 }
