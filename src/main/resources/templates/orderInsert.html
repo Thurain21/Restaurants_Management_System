@@ -15,15 +15,18 @@
         <h3>Select Items:</h3>
         <div th:each="Item, stat : ${itemlist}">
             <input type="checkbox" name="items[${stat.index}].itemId" th:value="${Item.itemId}">
-            <input type="number" name="items[${stat.index}].quantity" placeholder="Enter quantity" required min="1">
             <input type="hidden" name="items[${stat.index}].price" th:value="${Item.itemPrice}">
-            <span th:text="${Item.itemName} + ' - $' + ${Item.itemPrice}"></span><br>
+            <span th:text="${Item.itemName} + ' - $' + ${Item.itemPrice}"></span>
+            <input type="number" name="items[${stat.index}].quantity" placeholder="Enter quantity">
         </div><br>
 
         <label for="orderDate">Order Date:</label>
         <input type="date" name="orderDate" required><br><br>
 
         <input type="submit" value="Order">
-    </form>
+    </form><br>
+    <form th:action = "@{/RestaurantOrder}">
+	<input type="submit" value="Main Table List">
+	</form>
 </body>
 </html>
